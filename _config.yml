@@ -2,9 +2,6 @@
 title: Geniuses @ Play
 timezone: UTC
 collections:
-  blog:
-    title: Blog
-    output: true
   posts:
     title: Posts
     output: true
