@@ -1,0 +1,13 @@
+{%
+    assign domain = site.baseurl | prepend: site.url
+%}{%
+    assign url = site.baseurl
+%}{%
+    assign image_url = '/assets/images' | prepend: url
+%}{%
+    assign css_url = '/assets/css' | prepend: url
+%}{%
+    assign js_url = '/assets/js' | prepend: url
+%}{%
+    assign font_url = '/assets/fonts' | prepend: url
+%}

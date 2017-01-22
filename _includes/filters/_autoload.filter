@@ -1,0 +1,13 @@
+{%
+    include filters/author.filter
+%}{%
+    include filters/html-tag.filter
+%}{%
+    include filters/internationalization.filter
+%}{%
+    include filters/reading-time.filter
+%}{%
+   include filters/search.filter
+%}{%
+   include filters/url.filter
+%}

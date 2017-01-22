@@ -1,0 +1,15 @@
+<!-- {{ page.title | capitalize }} Stylesheets -->{% for stylesheet in page.css %}
+{%
+    assign stylesheet_first_char = stylesheet | slice: 0,1
+%}{%
+    if stylesheet_first_char == "h"
+%}{%
+    assign stylesheet_url = stylesheet
+%}{%
+    else
+%}{%
+    assign stylesheet_url = stylesheet | prepend: css_url
+%}{%
+    endif
+%}    <link href="{{ stylesheet_url }}" type="text/css" rel="stylesheet">{% endfor
+%}<!-- {{ page.title | capitalize }} Stylesheets -->

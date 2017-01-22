@@ -1,0 +1,22 @@
+<head>
+    <!-- Initial Meta Tagging -->
+    <meta charset="{{ encoding }}">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="{{ html_robots }}">
+    <!-- Initial Meta Tagging -->
+
+    <!-- SEO and RSS Feed -->
+    {% seo %}
+    <link type="text/plain" rel="author" href="{{ '/humans.txt' | prepend: domain }}" />
+    {% feed_meta %}
+    <!-- SEO and RSS Feed -->
+
+    <!-- Icons -->
+    <link rel="apple-touch-icon" href="{{ '/static/apple-touch-icon.png' | prepend: image_url }}" />
+    <link rel="shortcut icon" type='image/x-icon' href="{{ '/static/favicon.ico' | prepend: image_url }}" />
+    <!-- Icons -->
+
+    {% include master/head/stylesheets.html %}
+    {% include master/head/inline-css.html %}
+</head>

@@ -1,0 +1,27 @@
+{%
+    if page.class
+%}{%
+    assign html_class = 'no-js' | prepend: ' ' | prepend: page.class
+%}{%
+    endif
+%}{%
+    if page.id
+%}{%
+    assign html_id = page.id
+%}{%
+    else
+%}{%
+    assign html_id = page.title | truncate: 30, '' | slugify
+%}{%
+  endif
+%}{%
+    if page.index
+%}{%
+    assign html_robots = "index, follow"
+%}{%
+    else
+%}{%
+    assign html_robots = "noindex, nofollow"
+%}{%
+    endif
+%}

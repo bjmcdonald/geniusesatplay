@@ -1,0 +1,15 @@
+<!-- {{ page.title | capitalize }} JavaScript -->{% for javascript in page.js %}
+{%
+    assign javascript_first_char = javascript | slice: 0,1
+%}{%
+    if javascript_first_char == "h"
+%}{%
+    assign javascript_url = javascript
+%}{%
+else
+%}{%
+    assign javascript_url = javascript | prepend: js_url
+%}{%
+    endif
+%}<script src="{{ javascript_url }}"></script>
+{% endfor %}<!-- {{ page.title | capitalize }} JavaScript -->

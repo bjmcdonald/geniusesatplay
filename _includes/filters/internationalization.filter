@@ -1,0 +1,33 @@
+{%
+    if page.language
+%}{%
+    assign language_code = page.language
+%}{%
+    else
+%}{%
+    assign language_code = 'en'
+%}{%
+    endif
+%}{%
+    if language_code == 'en'
+%}{%
+    assign language = 'english'
+%}{%
+    endif
+%}{%
+    if language_code == 'de'
+%}{%
+    assign language = 'german'
+%}{%
+    endif
+%}{%
+    if page.encoding
+%}{%
+    assign encoding = page.encoding
+%}{%
+    else
+%}{%
+    assign encoding = 'utf-8'
+%}{%
+    endif
+%}

@@ -1,0 +1,5 @@
+{%
+    assign searchable_pages = site.pages | where:"index","enable"
+%}{%
+    assign searchable_posts = site.posts | where:"index","enable"
+%}

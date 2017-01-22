@@ -1,0 +1,22 @@
+---
+layout: null
+---
+{% include filters/_autoload.filter %}#==========================================================================
+# Humans
+#
+# @see http://humanstxt.org/
+#==========================================================================
+
+
+{% if site.credits %}
+/* THANKS */
+
+{{ site.credits }}{% endif %}
+
+/* SITE */
+
+Standards:      {% for standard in site.standards %}{{ standard }}{% unless forloop.last %}, {% endunless %}{% endfor %}
+Language:       {{ language }} ({{ language_code }})
+Encoding:       {{ encoding }}
+Description:    >
+  {{ site.description }}

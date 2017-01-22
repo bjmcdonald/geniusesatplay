@@ -1,0 +1,11 @@
+<!-- Simple Jekyll Search Script -->
+<script src="{{ '/assets/js/search/search.js' | prepend: site.baseurl }}"></script>
+<script>
+    SimpleJekyllSearch({
+        searchInput: document.getElementById('search-input'),
+        searchResultTemplate: '<li class="{class}"><a href="{url}">{title}</a></li>',
+        resultsContainer: document.getElementById('search-results'),
+        json: "{{ '/assets/js/search/search.json' | prepend: site.baseurl }}"
+    });
+</script>
+<!-- Simple Jekyll Search Script -->

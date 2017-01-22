@@ -15,9 +15,45 @@ defaults:
   values:
     layout: post
     permalink: "/posts/:title/"
+    author:   owner
+    encoding: "utf-8"
+    class:    "page"
+    index:    true
+    language: "en"
+    layout:   page
+    search:   false
+    css:
+      - /common.css
+      - /custom.css
+    js:
+      - /common.js
+      - /custom.js
 - scope:
     path: ''
     type: pages
   values:
     layout: page
 permalink: pretty
+
+
+# Build Settings
+###########################################################################
+auto_ids: true
+exclude:  ["_resources", "node_modules", "vendor"]
+encoding: "utf-8"
+markdown: "kramdown"
+kramdown:
+  input: "GFM"
+  syntax_highlighter: "rouge"
+
+
+# GEM Plugins
+###########################################################################
+gems:
+  - jekyll-feed
+  - jekyll-gist
+  - jekyll-mentions
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jemoji

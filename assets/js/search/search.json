@@ -1,0 +1,27 @@
+---
+layout: null
+---
+{% include filters/_autoload.filter %}[
+{% for index in searchable_pages %}{% if index.title != nil %}
+{
+"title"     : "{{ index.title }}",
+"category"  : "{{ index.category }}",
+"tags"      : "{{ index.tags | join: ', ' }}",
+"url"       : "{{ site.baseurl }}{{ index.url }}",
+"date"      : "{{ index.date }}",
+"class"     : "index--page",
+"content"   : {{ index.content | jsonify }}
+}{% unless forloop.last %},{% endunless %}
+{% endif %}{% endfor %}
+{% for index in searchable_posts %}{% if index.title != nil %}
+{
+"title"     : "{{ index.title }}",
+"category"  : "{{ index.category }}",
+"tags"      : "{{ index.tags | join: ', ' }}",
+"url"       : "{{ site.baseurl }}{{ index.url }}",
+"date"      : "{{ index.date }}",
+"class"     : "index--post",
+"content"   : {{ index.content | jsonify }}
+}{% unless forloop.last %},{% endunless %}
+{% endif %}{% endfor %}
+]

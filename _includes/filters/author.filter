@@ -1,0 +1,5 @@
+{%
+    assign author = site.data.authors.[page.author]
+%}{%
+    assign owner = site.data.authors.["owner"]
+%}

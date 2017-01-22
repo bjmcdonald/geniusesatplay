@@ -1,0 +1,9 @@
+{% include filters/_autoload.filter %}<!doctype html>
+<html class="{{ html_class }}" id="{{ html_id }}" lang="{{ language_code }}">
+{% include master/head/head.html %}
+<body>
+{% include master/notifications/client.html %}
+{{ content }}
+{% include master/scripts/scripts.html %}
+</body>
+</html>
