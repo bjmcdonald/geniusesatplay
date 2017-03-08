@@ -1,32 +1,23 @@
 // Initialize and Setup
 /////////////////////////////////////////////////////////////////////////////////
+@import "./node_modules/reset-css/_reset.scss"
+@import "./node_modules/scut/dist/_scut.scss"
 
-@import "colors"
+@import "normalize"
 @import "variables"
-
-
-// Front End Frameworks
-/////////////////////////////////////////////////////////////////////////////////
-
-@import "../../../node_modules/font-awesome/scss/font-awesome"
-@import "../../../node_modules/foundation-sites/scss/foundation"
-@import "../../../node_modules/motion-ui/motion-ui"
-
-// initialize Foundation for Sites components
-@include foundation-everything(true)
 
 
 // SASS Mixins
 /////////////////////////////////////////////////////////////////////////////////
+@import "mixins/common"
 
-@import "mixins/css3.mixin"
-@import "mixins/flexbox.mixin"
-@import "mixins/rem.mixin"
-@import "mixins/retina.mixin"
+@import "mixins/spacing"
 
 
 // Components
 /////////////////////////////////////////////////////////////////////////////////
+@import "components/patternbolt"
+@import "components/syntax"
 
 
 
@@ -34,7 +25,11 @@
 /////////////////////////////////////////////////////////////////////////////////
 
 @import "pages/typography"
+@import "pages/elements"
 
 
 // Segments
 /////////////////////////////////////////////////////////////////////////////////
+@import "segments/nav"
+@import "segments/footer"
+@import "base"

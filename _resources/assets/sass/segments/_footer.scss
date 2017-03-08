@@ -1,0 +1,136 @@
+.footer {
+    position: relative;
+    @include pb( 'overlapswirls', 155px, $blue, #fff, 0.05, 'none');
+    background: $blue;
+    color: white;
+    margin-top: 2em;
+
+    &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+//        height: scut-rem(80%);
+        height: 80%;
+        background:linear-gradient(to top, $blue, transparent);
+        bottom: 0;
+        left:0;
+        z-index: 0;
+    }
+
+    .footer-wrapper {
+		position: relative;
+        z-index: 1;
+
+        svg {
+	        margin-top: -1px;
+	        margin-right: -1px;
+        }
+    }
+
+    h1 {
+	    font-family: $italic-font;
+      font-weight:900;
+      font-style: italic;
+	    @include font-size(18px);
+    }
+
+    .col-md-2 {
+		-ms-flex-preferred-size: 20%;
+		flex-basis: 20%;
+		max-width: 20%;
+
+		@include medium-up {
+			text-align: left;
+		}
+    }
+
+    li {
+	    line-height: 1.25rem;
+
+	    a {
+		    color: #fff;
+		    text-decoration: none;
+
+		    &:hover {
+			    text-decoration: underline;
+		    }
+	    }
+    }
+
+    .footer-links {
+	    border-bottom: solid 1px #fff;
+	    padding-top: 1.5rem;
+	    padding-bottom: 2rem;
+	    margin-bottom: 2rem;
+    }
+
+    .follow-us {
+
+	    @include mobile {
+		    float: none;
+		    margin: 0 auto;
+		    width: 100%;
+		    text-align: center;
+		    max-width: 100%;
+		    flex-basis: 100%;
+	    }
+
+	    li {
+		    display: inline-block;
+		    padding-right: 0.5rem;
+
+		    img {
+			    height: 26px;
+			    width: 26px;
+		    }
+	    }
+    }
+
+    .footer-copyright {
+	    z-index: 10;
+	    padding-bottom: 1.5rem;
+    }
+
+    .footer-logo {
+	    padding-bottom: 0.75rem;
+
+	    @include medium-up {
+		    text-align: left;
+		    padding-bottom: 0;
+	    }
+    }
+
+    .footer-nav {
+	    @include medium-up {
+		    text-align: right;
+	    }
+
+	    ul {
+		    padding: 0.75em 0 0.5rem 0;
+
+		    li {
+			    display: inline-block;
+			    padding: 0 0.5rem;
+			    border-right: solid 1px #fff;
+				line-height: 1rem;
+
+			    &:last-child {
+				    border-right: none;
+				    padding-right: 0;
+			    }
+		    }
+	    }
+
+	    .copyright {
+		    font-size: .9em;
+		    margin: 0;
+	    }
+    }
+
+    .row {
+	    @include mobile {
+		    margin-left: 0;
+		    margin-right: 0;
+	    }
+    }
+}

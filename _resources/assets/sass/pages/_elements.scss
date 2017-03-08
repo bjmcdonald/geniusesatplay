@@ -1,0 +1,506 @@
+.header {
+	background: #fff;
+}
+
+.main-content {
+	position: relative;
+
+	@include mobile {
+		&.row {
+			margin-left: 0;
+			margin-right: 0;
+		}
+	}
+}
+
+.desktop {
+	@include mobile {
+		display: none;
+	}
+}
+
+.relative{
+	position: relative;
+}
+
+.shadow {
+	height: 8px;
+	background: rgba($color,.5);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1
+
+}
+
+.text-std {
+	@include font-size(16px);
+	line-height: 1.25em;
+}
+
+.main-logo {
+	text-align: center;
+
+	@include small {
+  		text-align: center;
+	}
+
+	@include medium {
+  		text-align: left;
+	}
+
+	@include large {
+		text-align: left;
+	}
+}
+
+.color-bar {
+	display: flex;
+	height: 5px;
+
+	@include mobile {
+		display: none;
+	}
+
+	div {
+		flex: 1;
+		height: 5px;
+
+		&.red {
+			background: $red;
+		}
+
+		&.purple {
+			background: $purple;
+		}
+
+		&.yellow {
+			background: $yellow;
+		}
+
+		&.green {
+			background: $green;
+		}
+	}
+}
+
+.text-xlg-green {
+	line-height: 1em;
+	font-style: italic;
+	font-weight: 900;
+	color: $green;
+	font-family: $italic-font;
+	margin: 0 2rem 0 0;
+
+	&.about {
+		line-height: 1rem;
+	}
+
+	@include mobile {
+		@include font-size(38px);
+	}
+
+	@include mobile-large {
+		@include font-size(56px);
+	}
+
+	@include desktop {
+		@include font-size(66px);
+	}
+}
+
+.text-lg-green {
+	@include font-size(36px);
+	line-height: 1em;
+	font-style: italic;
+	font-weight: 900;
+	color: $green;
+	font-family: $italic-font;
+	margin: 0 2rem 0 0;
+}
+
+.text-lg-yellow {
+	@include font-size(36px);
+	line-height: 1em;
+	font-style: italic;
+	font-weight: 900;
+	color: $yellow;
+	font-family: $italic-font;
+	margin: 0 0.25rem 0 0;
+}
+
+.text-lg-ltblue {
+	@include font-size(28px);
+	font-style: italic;
+	font-weight: 900;
+	color: $ltblue;
+	font-family: $italic-font;
+	margin: 0 2rem 0 0;
+}
+
+/////////////
+//         //
+//  FRONT  //
+//         //
+/////////////
+#home-hero {
+	background: url(../img/genatplayiusbg4.jpg) top center no-repeat;
+	background-size: cover;
+	height: auto;
+	position: relative;
+	box-sizing: border-box;
+	display: block;
+
+
+
+	@include desktop {
+		height: 560px;
+	}
+
+
+	@include mobile {
+		display: block;
+		background: url(../img/genatplayiusbg4-sm.jpg) left top no-repeat;
+		background-size: 100%;
+	}
+
+
+
+	.hero-row {
+		-webkit-justify-content: flex-end;
+		justify-content: flex-end;
+
+		@include mobile {
+			display: -webkit-flex;
+			display: flex;
+			-webkit-flex-direction: row;
+			flex-direction: row;
+			-webkit-justify-content: flex-end;
+			justify-content: flex-end;
+		}
+
+	}
+
+	.hero-content {
+		@include centerer(false,true);
+
+		width: 100%;
+	right: 0%;
+		@include mobile {
+			text-align: left;
+			position: relative;
+			top: auto;
+			transform: none;
+			-webkit-transform: none;
+			padding-top: 1rem;
+		}
+
+		@include mobile-large {
+			padding-top: 2rem;
+		}
+		@include large {
+
+
+		}
+	}
+
+	.headline {
+		margin: 0;
+//		padding-right: 3rem;
+		font-family: $italic-font;
+		font-weight: 900;
+		font-style: italic;
+		color: #fff;
+		@include font-size(24px);
+		text-align: left;
+
+		@include small {
+//			padding-right: 1rem;
+		}
+
+		@include mobile {
+			padding-right: 0;
+			@include font-size(20px);
+			@include text-shadow(1px,1px,1px,rgba(#000,.35));
+//			@include text-shadow(1px,1px,2px,rgba($purple,.75));
+		}
+	}
+
+	.play-button {
+		max-width: 45%;
+		display: inline-block;
+		margin: 4.20rem auto 0 auto;
+
+		@include mobile {
+			max-width: 75%;
+			margin: 2rem 0 0 0;
+		}
+
+		@include mobile-large {
+			max-width: 62.5%;
+			margin: 2rem 0 0 0;
+		}
+
+		@include small {
+			max-width: 60%;
+			margin: 3rem auto 0 auto;
+		}
+	}
+}
+
+#home {
+	padding: 5rem 0 3rem 0;
+
+	@include mobile {
+		padding: 2rem 0 0 0;
+	}
+
+	@include mobile-large {
+		padding: 3rem 0 1rem 0;
+	}
+
+	svg {
+		margin-right: 2em;
+
+		@include mobile {
+			margin-bottom: 2rem;
+		}
+	}
+
+	p.about {
+		text-align: right;
+	}
+
+	p.overview {
+		text-align: left;
+		@include font-size(24px);
+ 		font-family: $italic-font;
+		font-weight: 900;
+		font-style: italic;
+		color: $green;
+ 		margin: 3rem 0 0 1rem;
+
+		@include mobile {
+			margin: 0;
+			top: auto;
+			-webkit-transform: none;
+			transform: none;
+		}
+
+		@include small {
+			margin-top: -1rem;
+		}
+	}
+}
+
+
+//////////////////
+//              //
+//  ABOUT PAGE  //
+//              //
+//////////////////
+#about {
+	@include font-size(16px);
+	line-height: 1.66em;
+	text-align: left;
+
+	h2 {
+		margin: 0 0 2rem 0;
+	}
+}
+
+#about-hero {
+	position: relative;
+//	overflow: hidden;
+	height: 500px;
+	margin: 0 0 4rem 0;
+
+	$width: 75vw;
+	$height: calc(75vw / 1.5);
+	$heroHeight: calc(#{$width} * 0.75);
+
+	@include mobile {
+		height: auto;
+		overflow: hidden;
+		margin: 0 0 2rem 0;
+	}
+
+	@include small {
+		height: $heroHeight;
+	}
+
+	.circle-img {
+		background: url(../img/girl-blonde.jpg) top right no-repeat;
+		background-size: cover;
+		height: 480px;
+		width: 920px;
+		@include border-radius-separate(0px,0px,480px,480px);
+		position: absolute;
+		left: -10vw;
+
+		@include small {
+			width: $width;
+			height: $height;
+			@include border-radius-separate(0px,0px,$width,$width);
+		}
+
+//		@include medium {
+//			width: calc(#{$width} * 0.9);
+//			height: calc(#{$width} * 0.45);
+//		}
+
+		@include mobile {
+			$width: 60vw;
+			$height: calc(60vw / 1.5);
+
+			left: -5vw;
+			width: $width;
+			height: $height;
+			@include border-radius-separate(0px,0px,$width,$width);
+		}
+	}
+
+	.dots-yellow-green {
+		position: absolute;
+		top: -50px;
+		right: -10vw;
+		max-height: 400px;
+
+		@include mobile {
+			display: none;
+		}
+
+		@include small {
+			top: -25px;
+//			right: -5vw;
+			max-height: 274px;
+		}
+	}
+
+	.dots-blue-purple {
+		position: absolute;
+		bottom: -25px;
+		left: -10vw;
+		max-height: 250px;
+
+		@include small {
+			bottom: 0px;
+			left: -7vw;
+			max-height: 180px;
+		}
+
+		@include mobile {
+			display: none;
+		}
+	}
+
+	.about-hero-wrapper {
+		position: relative;
+		min-height: 100%;
+
+		.text-lg-yellow {
+			text-align: right;
+		}
+
+		@include mobile {
+			padding: 0;
+		}
+	}
+
+	$redWidth: 225px;
+	$redPad: calc(#{$redWidth} * 0.35);
+	$redPad2: calc(#{$redPad} / 2);
+	$redCopy: calc(#{$redWidth} * 1.35);
+
+	@include mobile {
+		$redWidth: 20vw;
+	}
+
+	.about-hero-content {
+		position: absolute;
+		right: 5vw;
+		top: calc(#{$redPad2} * -1.25);
+
+		@include mobile {
+			position: relative;
+			right: auto;
+			width: 100%;
+			top: auto;
+		}
+	}
+
+	.dots-red {
+		width: $redWidth;
+		padding: $redPad;
+		background: url(../img/dots-red.png) bottom center no-repeat;
+		background-size: cover;
+
+		@include mobile {
+			$width: 35vw;
+			$pad: calc(#{$width} / 2.5);
+			width: $width;
+			padding: $pad;
+			float: right;
+			margin-top: calc(#{$redPad} * -0.5);
+			margin-right: -5vw;
+			margin-bottom: 3rem;
+		}
+	}
+
+	.dots-copy {
+		width: $redCopy;
+		padding: scut-rem(24) 0 0 $redPad;
+		text-align: left;
+
+		@include small {
+//			color: #333;
+//			@include text-shadow(1px,1px,2px,rgba(#fff,.5));
+		}
+
+		@include mobile {
+			width: calc(100% - 6.25rem);
+//			flex-basis: 100%;
+//			max-width: 100%;
+//		    box-sizing: border-box;
+//		    -ms-flex: 0 0 auto;
+//		    -webkit-box-flex: 0;
+//		    flex: 0 0 auto;
+		    padding-right: 1rem;
+		    padding-left: 1rem;
+		    display: inline-block;
+		    clear: both;
+
+		    .text-std {
+			    line-height: 1.66em;
+		    }
+		}
+	}
+
+	.dotted-border {
+		border-bottom: dotted 1px #83A2FF;
+	}
+}
+//////////////////////
+//                  //
+//  OUR STORY PAGE  //
+//                  //
+//////////////////////
+#our-story {
+	@include font-size(16px);
+	line-height: 1.66em;
+	text-align: left;
+
+}
+
+
+
+//////////////////////
+//                  //
+//  OUR STORY PAGE  //
+//                  //
+//////////////////////
+.header-container {
+   margin-top:2rem;
+
+}

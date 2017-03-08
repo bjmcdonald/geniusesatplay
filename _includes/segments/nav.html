@@ -1,0 +1,63 @@
+<div class="header">
+
+          <div class="wrap container-fluid">
+              <div class="row">
+                  <div class="main-logo col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                       <a class="brand white-logo" href="/">  <img src="{{site.baseurl}}/img/gap_white-logo.svg" alt="{{ site.name }}" width="177" height="70" title="{{ site.name }}" /></a>
+                       <a class="brand" href="/"><img src="{{site.baseurl}}/img/GeniusesAtPlayLogo.png" alt="{{ site.name }}" title="{{ site.name }}" /></a>
+                   </div>
+
+                  <nav class="main-nav col-xs-12 col-sm-12 col-md-8 col-lg-8">
+                      <!-- <ul>
+                          {% for item in site.data.menu.menu %}
+                          <li>
+                              <a href="{{ item.url }}">
+                        {{ item.link-item }}
+                      </a>
+                      {% if item.subpages != null %}
+                      <span class="menu-arrow"></span>
+                      <ul class="dropdown-nav">
+                        {% for subpages in item.subpages %}
+                        <li><a href="{{ site.url }}{{ subpages.subhref }}">{{ subpages.link-item }}</a></li>
+                         {% endfor %}
+                       </ul>
+                      {% endif %}
+
+                          </li>
+                          {% endfor %}
+
+                      </ul> -->
+
+
+                      {% assign url_parts = page.url | split: '/' %}
+                      {% assign url_parts_size = url_parts | size %}
+                      {% assign rm = url_parts | last %}
+                      {% assign base_url = page.url  %}
+                      <ul>
+
+                          {% for node in site.pages %}
+
+                            {% if node.url contains base_url %}
+                               {% assign node_url_parts = node.url | split: '/' %}
+
+                              {% assign node_url_parts_size = node_url_parts | size %}
+                              {{ node_url_parts | last }} - {{ node_url_parts_size }}
+
+                              {% assign filename = node_url_parts | last %}
+                              {% if url_parts_size == node_url_parts_size and filename != 'index.html' %}
+                                <li><a href='{{node.url}}'>{{node.title}}</a></li>
+                              {% endif %}
+                            {% endif %}
+                          {% endfor %}
+                          </ul>
+
+                  </nav>
+                  <div class="menu-toggle">
+                      <span></span>
+                  </div>
+                  <div class="sub-menu-toggle">
+                      <span></span>
+                  </div>
+              </div>
+          </div>
+      </div>

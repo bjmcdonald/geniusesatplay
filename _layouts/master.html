@@ -1,9 +1,17 @@
 {% include filters/_autoload.filter %}<!doctype html>
 <html class="{{ html_class }}" id="{{ html_id }}" lang="{{ language_code }}">
 {% include master/head/head.html %}
-<body>
+<body class="layout">
+  <div class="page">
+    <div class="color-bar"><div class="red"></div><div class="purple"></div><div class="yellow"></div><div class="green"></div></div>
+    {% include segments/nav.html %}
+
 {% include master/notifications/client.html %}
 {{ content }}
+{% include segments/footer.html %}
+
 {% include master/scripts/scripts.html %}
+</div>
+
 </body>
 </html>

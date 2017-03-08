@@ -1,0 +1,175 @@
+// Defaults.
+$breakpoints: (
+  sm: '(min-width: 600px)',
+  md: '(min-width: 768px)',
+  lg: '(min-width: 1280px)',
+  xl: '(min-width: 1440px)'
+) !default;
+
+// Based on the Golden Ratio – because it _feels_ good.
+$spacing-increments: 0.6 1.6 2.6 4.2 6.8 11 18 29 46 75 !default;
+
+.p-0 { padding: 0; }
+.pt-0 { padding-top: 0; }
+.pr-0 { padding-right: 0; }
+.pb-0 { padding-bottom: 0; }
+.pl-0 { padding-left: 0; }
+
+.px-0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.py-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.m-0 { margin: 0; }
+.mt-0 { margin-top: 0; }
+.mr-0 { margin-right: 0; }
+.mb-0 { margin-bottom: 0; }
+.ml-0 { margin-left: 0; }
+
+.mx-0 {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.my-0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@for $i from 1 through length($spacing-increments) {
+  $rem-value: nth($spacing-increments, $i) + rem;
+
+  .p-#{$i} { padding: $rem-value; }
+  .pt-#{$i} { padding-top: $rem-value; }
+  .pr-#{$i} { padding-right: $rem-value; }
+  .pb-#{$i} { padding-bottom: $rem-value; }
+  .pl-#{$i} { padding-left: $rem-value; }
+  .px-#{$i} {
+    padding-left: $rem-value;
+    padding-right: $rem-value;
+  }
+  .py-#{$i} {
+    padding-top: $rem-value;
+    padding-bottom: $rem-value;
+  }
+
+  .m-#{$i} { margin: $rem-value; }
+  .mn-#{$i} { margin: -1*($rem-value); }
+  .mt-#{$i} { margin-top: $rem-value; }
+  .mtn-#{$i} { margin-top: -1*($rem-value); }
+  .mr-#{$i} { margin-right: $rem-value; }
+  .mrn-#{$i} { margin-right: -1*($rem-value); }
+  .mb-#{$i} { margin-bottom: $rem-value; }
+  .mbn-#{$i} { margin-bottom: -1*($rem-value); }
+  .ml-#{$i} { margin-left: $rem-value; }
+  .mln-#{$i} { margin-left: -1*($rem-value); }
+  .mx-#{$i} {
+    margin-left: $rem-value;
+    margin-right: $rem-value;
+  }
+  .mxn-#{$i} {
+    margin-left: -1*($rem-value);
+    margin-right: -1*($rem-value);
+  }
+  .my-#{$i} {
+    margin-top: $rem-value;
+    margin-bottom: $rem-value;
+  }
+  .myn-#{$i} {
+    margin-top: -1*($rem-value);
+    margin-bottom: -1*($rem-value);
+  }
+}
+
+@each $abbr, $breakpoint in $breakpoints {
+  @media #{$breakpoint} {
+    .#{$abbr}-p-0 { padding: 0; }
+    .#{$abbr}-pt-0 { padding-top: 0; }
+    .#{$abbr}-pr-0 { padding-right: 0; }
+    .#{$abbr}-pb-0 { padding-bottom: 0; }
+    .#{$abbr}-pl-0 { padding-left: 0; }
+    .#{$abbr}-px-0 {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .#{$abbr}-py-0 {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .#{$abbr}-m-0 { margin: 0; }
+    .#{$abbr}-mt-0 { margin-top: 0; }
+    .#{$abbr}-mr-0 { margin-right: 0; }
+    .#{$abbr}-mb-0 { margin-bottom: 0; }
+    .#{$abbr}-ml-0 { margin-left: 0; }
+    .#{$abbr}-mx-0 {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .#{$abbr}-my-0 {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    .#{$abbr}-mx-auto {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @for $i from 1 through length($spacing-increments) {
+
+      $rem-value: nth($spacing-increments, $i) + rem;
+
+      .#{$abbr}-p-#{$i} { padding: $rem-value; }
+      .#{$abbr}-pt-#{$i} { padding-top: $rem-value; }
+      .#{$abbr}-pr-#{$i} { padding-right: $rem-value; }
+      .#{$abbr}-pb-#{$i} { padding-bottom: $rem-value; }
+      .#{$abbr}-pl-#{$i} { padding-left: $rem-value; }
+      .#{$abbr}-px-#{$i} {
+        padding-left: $rem-value;
+        padding-right: $rem-value;
+      }
+      .#{$abbr}-py-#{$i} {
+        padding-top: $rem-value;
+        padding-bottom: $rem-value;
+      }
+
+      .#{$abbr}-m-#{$i} { margin: $rem-value; }
+      .#{$abbr}-mn-#{$i} { margin: -1*($rem-value); }
+      .#{$abbr}-mt-#{$i} { margin-top: $rem-value; }
+      .#{$abbr}-mtn-#{$i} { margin-top: -1*($rem-value); }
+      .#{$abbr}-mr-#{$i} { margin-right: $rem-value; }
+      .#{$abbr}-mrn-#{$i} { margin-right: -1*($rem-value); }
+      .#{$abbr}-mb-#{$i} { margin-bottom: $rem-value; }
+      .#{$abbr}-mbn-#{$i} { margin-bottom: -1*($rem-value); }
+      .#{$abbr}-ml-#{$i} { margin-left: $rem-value; }
+      .#{$abbr}-mln-#{$i} { margin-left: -1*($rem-value); }
+      .#{$abbr}-mx-#{$i} {
+        margin-left: $rem-value;
+        margin-right: $rem-value;
+      }
+      .#{$abbr}-mxn-#{$i} {
+        margin-left: -1*($rem-value);
+        margin-right: -1*($rem-value);
+      }
+      .#{$abbr}-my-#{$i} {
+        margin-top: $rem-value;
+        margin-bottom: $rem-value;
+      }
+      .#{$abbr}-myn-#{$i} {
+        margin-top: -1*($rem-value);
+        margin-bottom: -1*($rem-value);
+      }
+    }
+  }
+}

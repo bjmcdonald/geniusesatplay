@@ -28,16 +28,15 @@
  */
 
 const elixir = require('laravel-elixir');
+const browserSync = require('laravel-elixir-browser-sync-simple');
 require('laravel-elixir-vue');
-
 // set relative path to root directory from resources directory
-var root           = "../../../";
+var root = "../../../";
 
 // elixir configuration
-elixir.config.assetsPath = "_resources/assets";  // set path to resources directory
-elixir.config.publicPath = "assets";             // set path to public directory
-elixir.config.sourcemaps = true;                 // set source map generation
-
+elixir.config.assetsPath = "_resources/assets"; // set path to resources directory
+elixir.config.publicPath = "assets"; // set path to public directory
+elixir.config.sourcemaps = true; // set source map generation
 
 
 
@@ -51,10 +50,13 @@ elixir.config.sourcemaps = true;                 // set source map generation
  *
  */
 elixir(function(mix) {
-    mix.copy('node_modules/font-awesome/fonts',                                 "assets/fonts/font-awesome")            // copy Font-Awesome web fonts
-        .copy('node_modules/simple-jekyll-search/dest/jekyll-search.min.js',    "assets/js/search/search.js")           // copy Search plugin
-        .copy('node_modules/jquery/dist/jquery.min.js',                         "assets/js/jquery/jquery-2.2.4.js")     // copy jQuery javascript framework
-        .copy('node_modules/what-input/dist/lte-IE8.js',                        "assets/js/ie/lte-IE8.js");             // copy Internet-Explorer script
+  mix.copy('node_modules/font-awesome/fonts', "assets/fonts/font-awesome") // copy Font-Awesome web fonts
+    .copy('node_modules/simple-jekyll-search/dest/jekyll-search.min.js',
+      "assets/js/search/search.js") // copy Search plugin
+    .copy('node_modules/jquery/dist/jquery.min.js',
+      "assets/js/jquery/jquery-2.2.4.js") // copy jQuery javascript framework
+    .copy('node_modules/what-input/dist/lte-IE8.js',
+      "assets/js/ie/lte-IE8.js"); // copy Internet-Explorer script
 });
 
 
@@ -69,7 +71,7 @@ elixir(function(mix) {
  *
  */
 elixir(function(mix) {
-    mix.sass('common.sass');
+  mix.sass('common.sass');
 });
 
 
@@ -84,5 +86,18 @@ elixir(function(mix) {
  *
  */
 elixir(function(mix) {
-    mix.webpack('common.js');
+  mix.webpack('common.js');
+});
+
+elixir(function(mix) {
+  mix.browserSync({
+    proxy: "127.0.0.1:4000",
+    logPrefix: "Laravel Eixir BrowserSync",
+    logConnections: false,
+    reloadOnRestart: false,
+    notify: false,
+    files: ['_site/**/*.html', '_site/**/*.css', '_site/**/*.js',
+      '_site/**/*.txt', '_site/**/*.md'
+    ]
+  });
 });

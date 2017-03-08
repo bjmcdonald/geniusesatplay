@@ -39,7 +39,7 @@ permalink: pretty
 # Build Settings
 ###########################################################################
 auto_ids: true
-exclude:  ["_resources", "node_modules", "vendor"]
+exclude:  ["_resources", "node_modules", "vendor", "gulpfile.js"]
 encoding: "utf-8"
 markdown: "kramdown"
 kramdown:
